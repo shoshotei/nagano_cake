@@ -1,1 +1,25 @@
 <h2>商品新規登録</h2>
+
+<h3>商品画像</h3>
+ <%= f.file_field :image %>
+
+<h3>商品名</h3>
+ <%= f.text_field :name %>
+
+<h3>商品説明</h3>
+ <%= f.text_area :introduction %>
+
+ <h3>ジャンル</h3>
+ <%= f.select :
+
+<h3>税抜価格</h3>
+　<%= f.number_field :price %>
+
+<h3>販売ステータス</h3>
+ <%= f.radio_button :is_active, "now_on_sale" %>
+ <%= f.label :is_active, "販売中" %>
+
+ <%= f.radio_button :is_active, "suspension_of_sale" %>
+ <%= f.label :is_active, "販売中止" %>
+
+ <%= f.submit '新規登録' %>
