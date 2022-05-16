@@ -14,9 +14,11 @@
   </thead>
 
   <tbody>
+    <% @genres.each do |genre| %>
     <tr>
+      <td><%= genre.name %></td>
       <td></td>
-      <td></td>
+
     </tr>
   </tbody>
 </table>
