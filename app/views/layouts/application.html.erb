@@ -14,37 +14,37 @@
     <header>
       <% if customer_signed_in? %>
 
-      <%= "マイページ" %>
+      <%= link_to "マイページ", customer_path %>
 
-      <%= "商品一覧" %>
+      <%= link_to "商品一覧", items_path %>
 
-      <%= "カート" %>
+      <%= link_to "カート", cart_items_path %>
 
-      <%= "ログアウト" %>
+      <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
 
 
       <% elsif admin_signed_in? %>
 
-      <%= "商品一覧" %>
+      <%= link_to "商品一覧", admin_items_path %>
 
-      <%= "会員一覧" %>
+      <%= link_to "会員一覧", admin_customers_path %>
 
-      <%= "注文履歴一覧" %>
+      <%= link_to "注文履歴一覧", admin_homes_path %>
 
-      <%= "ジャンル一覧" %>
+      <%= link_to "ジャンル一覧", admin_geners_path %>
 
-      <%= "ログアウト" %>
+      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
 
 
       <% else %>
 
-      <%= "About" %>
+      <%= link_to "About",  homes_about_path %>
 
-      <%= "商品一覧"%>
+      <%= link_to "商品一覧" items_path %>
 
-      <%= "新規登録" %>
+      <%= link_to "新規登録", new_customer_registration_path %>
 
-      <%= "ログイン" %>
+      <%= link_to "ログイン", new_customer_session_path %>
 
       <% end %>
 
