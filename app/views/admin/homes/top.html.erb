@@ -13,10 +13,12 @@
   <tbody>
     <% @orders.each do |order| %>
     <tr>
-      <td></td>
+      <td><%= order.create_at %></td>
       <td><%= order.name %></td>
       <td><%= order_details.amount %></td>
-      <td></td>
+      <td><%= order.status %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
+<%= pagenate @orders %>
