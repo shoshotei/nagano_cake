@@ -1,5 +1,7 @@
 <h2>商品編集</h2>
 
+<% form_with model: @item do |item| %>
+
 <h3>商品画像</h3>
  <%= f.file_field :image %>
 
@@ -23,3 +25,5 @@
  <%= f.label :is_active, "販売中止" %>
 
  <%= f.submit '変更を保存', class:"btn btn-secondary btn-sm"  %>
+
+ <% end %>
