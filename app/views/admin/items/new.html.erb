@@ -10,7 +10,7 @@
  <%= f.text_area :introduction %>
 
  <h3>ジャンル</h3>
- <%= f.select :  %>
+ <%= f.collection_select (:genre_id, @genres, :id, :name) %>
 
 <h3>税抜価格</h3>
 　<%= f.number_field :price %>

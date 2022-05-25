@@ -1,9 +1,10 @@
 <h2>ジャンル一覧、追加</h2>
 
 <h3>ジャンル名</h3>
-<%= f.text_field :name %>
-
-<%= f.submit '新規投稿' %>
+ <% form_with model: @genre do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit '新規投稿' %>
+ <% end %>
 
 <table>
   <thead>
@@ -18,7 +19,7 @@
     <tr>
       <td><%= genre.name %></td>
       <td><%= link_to "編集する", edit_admin_genre_path(@genre.id) %></td>
-
     </tr>
+    <% end %>
   </tbody>
 </table>
