@@ -1,0 +1,9 @@
+<h2>会員情報編集</h2>
+
+<% form_with model: @customers do |customer| %>
+
+
+     <div class="form-group">
+        <label for="inputName">氏名</label></br>
+        <%= f.text_field :last_name, autofocus: true, id:"inputName", placeholder:"名前" %><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前" %></br>
+       </div>

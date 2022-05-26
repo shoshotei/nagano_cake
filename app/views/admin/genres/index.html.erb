@@ -1,15 +1,16 @@
 <h2>ジャンル一覧、追加</h2>
 
-<h3>ジャンル名</h3>
- <% form_with model: @genre do |f| %>
+
+ <% form_with model: @genre, url: admin_genres_path do |f| %>
+  <label for="genre_name">ジャンル名</label></br>
   <%= f.text_field :name %>
-  <%= f.submit '新規投稿' %>
+  <%= f.submit '新規投稿', class:"btn btn-success btn-sm" %>
  <% end %>
 
-<table>
+<table class="table table-sm">
   <thead>
    <tr>
-    <th>ジャンル</th>
+    <th scope="col">ジャンル</th>
     <th colspan="3"></th>
    </tr>
   </thead>
