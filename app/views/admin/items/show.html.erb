@@ -1,26 +1,16 @@
 <h2>商品詳細</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>商品名</th>
-      <th>商品説明</th>
-      <th>ジャンル</th>
-      <th>税込価格（税抜価格）</th>
-      <th>販売ステータス</th>
-    </tr>
-  </thead>
+<table class="table">
 
   <tbody>
     <tr>
-      <td></td>
-      <td><%= item.name %></td>
-      <td><%= item.introduction %></td>
-      <td><%= genre.name %></td>
-      <td><%= item.price %></td>
-      <td><%= item.is_active %></td>
+      <td><%= image_tag @item.get_image </td>
+      <td>商品名:               <%= @item.name %></td>
+      <td>商品説明:             <%= @item.introduction %></td>
+      <td>ジャンル:             <%= genre.name %></td>
+      <td>税込価格（税抜価格）: <%= @item.price %></td>
+      <td>販売ステータス:       <%= @item.is_active %></td>
     </tr>
   </tbody>
 
-  <%= "編集する" %>
+  <%= link_to "編集する"  edit_admin_item_path, class:"btn btn-success btn-sm"  %>
