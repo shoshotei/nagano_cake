@@ -4,7 +4,7 @@
 
   <tbody>
     <tr>
-      <td><%= image_tag @item.get_image </td>
+      <td><%= image_tag @item.get_image %></td>
       <td>商品名:               <%= @item.name %></td>
       <td>商品説明:             <%= @item.introduction %></td>
       <td>ジャンル:             <%= genre.name %></td>
@@ -13,4 +13,4 @@
     </tr>
   </tbody>
 
-  <%= link_to "編集する"  edit_admin_item_path, class:"btn btn-success btn-sm"  %>
+  <%= link_to "編集する", edit_admin_item_path, class:"btn btn-success btn-sm" %>
