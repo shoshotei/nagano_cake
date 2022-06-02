@@ -7,7 +7,7 @@
       <td><%= image_tag @item.get_image %></td>
       <td>商品名:               <%= @item.name %></td>
       <td>商品説明:             <%= @item.introduction %></td>
-      <td>ジャンル:             <%= genre.name %></td>
+      <td>ジャンル:             <%= @item.genre.name %></td>
       <td>税込価格（税抜価格）: <%= @item.price %></td>
       <td>販売ステータス:       <%= @item.is_active %></td>
     </tr>

@@ -1,0 +1,20 @@
+<h3>商品詳細</h3>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <%= image_tag @item.get_image %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= @item.name %></h5>
+        <p class="card-text"><%= @item.introduction %></p>
+        <p class="card-text">¥ <%= @item.price %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%= "カートに入れる", class:"btn btn-success btn-sm" %>
