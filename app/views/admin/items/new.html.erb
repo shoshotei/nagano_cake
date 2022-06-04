@@ -18,10 +18,10 @@
  <%= f.text_field :price, placeholder:"1000" %></br>
 
 <label for="is_active">販売ステータス</label>
- <%= f.radio_button :is_active, "now_on_sale" %>
+ <%= f.radio_button :is_active, true %>
  <%= f.label :is_active, "販売中" %>
 
- <%= f.radio_button :is_active, "suspension_of_sale" %>
+ <%= f.radio_button :is_active, false %>
  <%= f.label :is_active, "販売中止" %></br>
 
  <p><%= f.submit '新規登録', class:"btn btn-success btn-sm" %></p>
