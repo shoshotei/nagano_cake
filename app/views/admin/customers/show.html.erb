@@ -1,47 +1,19 @@
-<h2>会員詳細</h2>
 
-<p>
- <strong>会員ID</strong>
- <%= customer.id %>
-</p>
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">会員詳細</h5>
+    <p class="card-text">会員ID：         <%= @customer.id %></p>
+    <p class="card-text">氏名：           <%= @customer.last_name %> <%= @customer.first_name %></p>
+    <p class="card-text">フリガナ：       <%= @customer.last_kana_name %> <%= @customer.first_kana_name %></p>
+    <p class="card-text">郵便番号：       <%= @customer.postal_code %></p>
+    <p class="card-text">住所：           <%= @customer.address %></p>
+    <p class="card-text">電話番号：       <%= @customer.telephone_number %></p>
+    <p class="card-text">メールアドレス： <%= @customer.email %>></p>
+    <p class="card-text">会員ステータス： <%= @customer.is_active %></p>
+    <p>
+     <%= link_to "編集する", edit_admin_customer_path, class:"btn btn-success btn-sm" %>
 
-<p>
- <strong>氏名</strong>
- <%= customer.last_name %><%= customer.first_name %>
-</p>
-
-<p>
- <strong>フリガナ</strong>
- <%= customer.last_kana_name %><%= customer.first_kana_name %>
-</p>
-
-<p>
- <strong>郵便番号</strong>
- <%= customer.postal_code %>
-</p>
-
-<p>
-  <strong>住所</strong>
-  <%= customer.address %>
-</p>
-
-<p>
-  <strong>電話番号</strong>
-  <%= customer.telephone_number %>
-</p>
-
-<p>
-  <strong>メールアドレス</strong>
-  <%= customer.email %>
-</p>
-
-<p>
-  <strong>会員ステータス</strong>
-  <%= customer.is_active %>
-</p>
-
-<p>
-<%= link_to "編集する" edit_admin_customer_path, class:"btn btn-success btn-sm" %>
-
-<%= link_to "注文履歴一覧を見る" admin_homes_path, class:"btn btn-primary btn-sm" %>
-</p>
+     <%= link_to "注文履歴一覧を見る", admin_homes_path, class:"btn btn-primary btn-sm" %>
+    </p>
+  </div>
+</div>

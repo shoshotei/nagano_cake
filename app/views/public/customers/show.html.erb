@@ -1,7 +1,7 @@
 <h2>マイページ</h2>
 
 <h2>登録情報</h2>
-<%= link_to "編集する" edit_customer_path, class:"btn btn-success btn-sm" %>
+<%= link_to "編集する", edit_customers_path, class:"btn btn-success btn-sm" %>
 
 <table>
   <thead>
@@ -16,7 +16,7 @@
   </thead>
 
   <tbody>
-
+   <% current_customer %>
     <tr>
       <td><%= customers.last_name %> <%= customers.first_name %></td>
       <td><%= customers.last_name_kana %> <%= customers.first_name_ kana %></td>
@@ -25,11 +25,12 @@
       <td><%= customers.telephone_number %></td>
       <td><%= customers.email %></td>
     </tr>
+   <% end %>
   </tbody>
 </table>
 
 <h2>配送先</h2>
-<%= link_to "一覧を見る" address_path, class:"btn btn-primary btn-sm" %>
+<%= link_to "一覧を見る", address_path, class:"btn btn-primary btn-sm" %>
 
 <h2>注文履歴</h2>
-<%= link_to "一覧を見る" orders_path, class:"btn btn-primary btn-sm" %>
+<%= link_to "一覧を見る", orders_path, class:"btn btn-primary btn-sm" %>

@@ -1,5 +1,7 @@
 <h3>ショッピングカート</h3>
-
+<% if @cart_item.customer == current_customer %>
+  <%= link_to "カートを空にする", cart_items_destroy_all_path, class:"btn btn-danger btn-sm", method: :delete, "data-confirm" => "本当に空にしますか？" %>
+<% end %>
 <table>
   <thead>
     <tr>
@@ -16,8 +18,9 @@
     <tr>
       <td><%= cart_item.name %></td>
       <td><%= cart_item.item.with_tax_price %></td>
-      <td></td>
+      <td><%= cart_item.amount %></td>
       <td><%= cart_item.subtotal %></td>
+      <% @totel += cart_item.subtotal %>
       <td></td>
     </tr>
     <% end %>

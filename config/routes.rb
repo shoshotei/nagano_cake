@@ -24,7 +24,7 @@ scope module: :public do
 
   resources :items,         only:[:index, :show]
 
-  resources :customers,     only:[:show, :edit, :update]
+  resource :customers,     only:[:show, :edit, :update]
   get "/customers/confirm" => "customers#confirm"
   patch "/customers/withdrawal" => "customers#withdrawal"
 
