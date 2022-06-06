@@ -16,16 +16,15 @@
   </thead>
 
   <tbody>
-   <% current_customer %>
+
     <tr>
-      <td><%= customers.last_name %> <%= customers.first_name %></td>
-      <td><%= customers.last_name_kana %> <%= customers.first_name_ kana %></td>
-      <td><%= customers.postal_code %></td>
-      <td><%= customers.address %></td>
-      <td><%= customers.telephone_number %></td>
-      <td><%= customers.email %></td>
+      <td><%= current_customer.last_name %> <%= current_customer.first_name %></td>
+      <td><%= current_customer.last_name_kana %> <%= current_customer.first_name_ kana %></td>
+      <td><%= current_customer.postal_code %></td>
+      <td><%= current_customer.address %></td>
+      <td><%= current_customer.telephone_number %></td>
+      <td><%= current_customer.email %></td>
     </tr>
-   <% end %>
   </tbody>
 </table>
 
