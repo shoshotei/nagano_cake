@@ -31,10 +31,12 @@ scope module: :public do
   resources :cart_items,    only:[:index, :update, :destroy, :create]
   delete "/cart_items/destroy_all" => "cart_items#destroy_all"
 
-  resources :orders,        only:[:new, :create, :index, :show]
-  get "/orders/confirm" => "orders#confirm"
-  get "/orders/conpletion" => "orders#conpletion"
-
+  resources :orders,        only:[:new, :create, :index, :show] do
+    collection do
+  get "/confirm" => "orders#confirm"
+  get "/conpletion" => "orders#conpletion"
+end
+end
   resources :addresses,     only:[:index, :edit, :create, :update, :destroy]
 end
   #devise_for :admins
