@@ -9,7 +9,12 @@
     <p class="card-text">住所：           <%= @customer.address %></p>
     <p class="card-text">電話番号：       <%= @customer.telephone_number %></p>
     <p class="card-text">メールアドレス： <%= @customer.email %>></p>
-    <p class="card-text">会員ステータス： <%= @customer.is_active %></p>
+    <p class="card-text">
+      会員ステータス：
+      <% if @customer.is_active == true %>有効
+        <% else %>退会
+      <% end %>
+    </p>
     <p>
      <%= link_to "編集する", edit_admin_customer_path, class:"btn btn-success btn-sm" %>
 
