@@ -2,8 +2,10 @@
 
 <% @items.each do |item| %>
 
-<%= image_tag @item.get %>
+<%= image_tag item.get_image %>
+<%= image_tag 'sample-author1.jpg' %>
 <%= items.name %>
 <%= items.price %>
 
 <% end %>
+<%= paginate @items %>
