@@ -1,11 +1,13 @@
 <h2>商品一覧</h2>
 
+<div class="card" style="width: 18rem;">
 <% @items.each do |item| %>
 
 <%= image_tag item.get_image %>
-<%= image_tag 'sample-author1.jpg' %>
-<%= items.name %>
-<%= items.price %>
-
+<div class="card-body">
+<p class="card-text"><%= link_to item.name, item_path(item.id) %></p>
+<p class="card-text"><%= item.price %></p>
+ </div>
 <% end %>
+</div>
 <%= paginate @items %>
