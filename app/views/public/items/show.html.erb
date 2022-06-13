@@ -9,7 +9,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= @item.name %></h5>
         <p class="card-text"><%= @item.introduction %></p>
-        <p class="card-text">¥ <%= @item.price %></p>
+        <p class="card-text"> <%= @item.price %></p>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 
 
 <p>
- <%= form_with model: @cart_item do |f| %>
+ <%= form_with model: @cart_item,local: true do |f| %>
    <%= f.hidden_field :item_id, value:@item.id %>
    <%= f.select :amount, *[1..10] %>
    <%= f.submit "カートに入れる", class:"btn btn-success btn-sm" %>
