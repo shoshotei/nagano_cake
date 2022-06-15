@@ -4,11 +4,11 @@
     <h5 class="card-title">会員詳細</h5>
     <p class="card-text">会員ID：         <%= @customer.id %></p>
     <p class="card-text">氏名：           <%= @customer.last_name %> <%= @customer.first_name %></p>
-    <p class="card-text">フリガナ：       <%= @customer.last_kana_name %> <%= @customer.first_kana_name %></p>
+    <p class="card-text">フリガナ：       <%= @customer.last_name_kana %> <%= @customer.first_name_kana %></p>
     <p class="card-text">郵便番号：       <%= @customer.postal_code %></p>
     <p class="card-text">住所：           <%= @customer.address %></p>
     <p class="card-text">電話番号：       <%= @customer.telephone_number %></p>
-    <p class="card-text">メールアドレス： <%= @customer.email %>></p>
+    <p class="card-text">メールアドレス： <%= @customer.email %></p>
     <p class="card-text">
       会員ステータス：
       <% if @customer.is_active == true %>有効
