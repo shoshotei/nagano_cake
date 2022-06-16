@@ -35,7 +35,7 @@
   <tbody>
     <tr>
       <td><%= @order.shipping_cost %></td>
-      <td><% @totel %></td>
+      <td><%= @total.to_i %></td>
       <td><%= @order.shipping_cost.to_i + @total.to_i %></td>
     </tr>
   </tbody>

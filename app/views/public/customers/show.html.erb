@@ -19,7 +19,7 @@
 
     <tr>
       <td><%= current_customer.last_name %> <%= current_customer.first_name %></td>
-      <td><%= current_customer.last_name_kana %> <%= current_customer.first_name_ kana %></td>
+      <td><%= current_customer.last_name_kana %> <%= current_customer.first_name_kana %></td>
       <td><%= current_customer.postal_code %></td>
       <td><%= current_customer.address %></td>
       <td><%= current_customer.telephone_number %></td>
@@ -29,7 +29,7 @@
 </table>
 
 <h2>配送先</h2>
-<%= link_to "一覧を見る", address_path, class:"btn btn-primary btn-sm" %>
+<%= link_to "一覧を見る", addresses_path, class:"btn btn-primary btn-sm" %>
 
 <h2>注文履歴</h2>
 <%= link_to "一覧を見る", orders_path, class:"btn btn-primary btn-sm" %>
