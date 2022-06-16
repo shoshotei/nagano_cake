@@ -6,3 +6,12 @@
 <p>購入には会員登録が必要になります。</p>
 
 <h2>新着商品</h2>
+<div class="card" style="width: 18rem;">
+<% @items.each do |item| %>
+<%= image_tag item.get_image %>
+<div class="card-body">
+<p class="card-text"><%= item.name %></p>
+<p class="card-text"><%= item.price %></p>
+</div>
+<% end %>
+</div>
