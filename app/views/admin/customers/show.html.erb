@@ -11,7 +11,7 @@
     <p class="card-text">メールアドレス： <%= @customer.email %></p>
     <p class="card-text">
       会員ステータス：
-      <% if @customer.is_active == true %>有効
+      <% if @customer.is_deleted == true %>有効
         <% else %>退会
       <% end %>
     </p>
