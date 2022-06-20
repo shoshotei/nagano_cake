@@ -18,9 +18,9 @@
       <td><%= order.created_at %></td>
       <td><%= order.address %></td>
       <td><%= order.item_id %></td>
-      <td><%= @order.shipping_cost.to_i + @total.to_i %></td>
+      <td><%= order.shipping_cost.to_i + @total.to_i %></td>
       <td><%= order.status_i18n %></td>
-      <td><%= link_to "表示する", order_path(@arder.id), class:"btn btn-primary btn-sm" %></td>
+      <td><%= link_to "表示する", order_path(@order.id), class:"btn btn-primary btn-sm" %></td>
     </tr>
     <% end %>
   </tbody>

@@ -1,6 +1,6 @@
 <h2>会員情報編集</h2>
 
-<% form_with model: @customers do |customer| %>
+<% form_with model: @customer do |f| %>
 
 
       <div class="form-group">
@@ -34,4 +34,4 @@
         <%= f.email_field :email, autofocus: true, id:"inputEmail" %></br>
       </div>
 
-      <%= f.submit "編集内容を保存", class:"btn btn-secondary btn-sm" %> <%= "退会する" %>
+      <%= f.submit "編集内容を保存", class:"btn btn-secondary btn-sm" %> <%= link_to "退会する",  edit_customers_path, class:"btn btn-danger btn-sm" %>

@@ -46,6 +46,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
+    @order = Order.find(params[:id])
     @order.shipping_cost = 800
     @orders = Order.all
   end

@@ -28,8 +28,8 @@ scope module: :public do
   get "/customers/confirm" => "customers#confirm"
   patch "/customers/withdrawal" => "customers#withdrawal"
 
-  resources :cart_items,    only:[:index, :update, :destroy, :create]
   delete "/cart_items/destroy_all" => "cart_items#destroy_all"
+  resources :cart_items,    only:[:index, :update, :destroy, :create]
 
   resources :orders,        only:[:new, :create, :index, :show] do
     collection do
