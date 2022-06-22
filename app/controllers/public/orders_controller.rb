@@ -40,7 +40,10 @@ class Public::OrdersController < ApplicationController
       @order_detail.order_id = @order.id
       @order_detail.price_including_tax = cart_item.subtotal
       @order_detail.amount = cart_item.amount
+      @order_detail.making_status = 0
+      @order_detail.save
     end
+
     current_customer.cart_items.destroy_all
     redirect_to conpletion_orders_path
   end
