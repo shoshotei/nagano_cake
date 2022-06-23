@@ -4,31 +4,34 @@
    <div class="row">
     <p>
      <strong>購入者</strong>
-      <%= order.name %>
+      <%= @order.name %>
     </p>
-    
+
     <p>
      <strong>注文日</strong>
-      <%= order.create_at %>
+      <%= @order.created_at %>
     </p>
-    
+
     <P>
      <strong>配送先</strong>
-      <%= order.postal_code %><%= order.address %><%= order.name %>
+      <%= @order.postal_code %><%= @order.address %><%= @order.name %>
     </P>
-    
+
     <p>
      <strong>支払方法</strong>
-      <%= order.payment_method %>
+      <%= @order.payment_method %>
     </p>
-    
+
     <p>
      <strong>注文ステータス</strong>
-      <%= order.status_i18n %>
-     
+      <%= @order.status_i18n %>
+      <%= form_with model: @order do |f| %>
+      <%= f.select :status, Order.statuses_i18n.keys.map {|k| [I18n.t("enums.order.status.#{k}"), k]} %>
+      <%= f.submit "変更", class:"btn btn-success btn-sm" %>
+      <% end %>
     </p>
    </div>
-    
+
     <div class="row">
      <table>
        <thead>
@@ -41,16 +44,24 @@
           <th></th>
         </tr>
        </thead>
-       
+
        <tbody>
+        <% @order_details.each do |order_detail| %>
          <tr>
-          <td><%= item.name %></td>
-          <td><%= order_detail.price %></td>
+          <td><%= order_detail.item.name %></td>
+          <td><%= order_detail.item.price %></td>
           <td><%= order_detail.amount %></td>
           <td></td>
-          <td><%= order_detail.making_status %></td>
+          <td>
+           <%= order_detail.making_status %>
+            <%= form_with model: @order_detail do |f| %>
+             <%= f.select :making_status, OrderDetail.making_statuses_i18n.keys.map {|k| [I18n.t("enums.order_detail.making_status.#{k}"), k]} %>
+             <%= f.submit "変更", class:"btn btn-success btn-sm" %>
+            <% end %>
+          </td>
           <td></td>
          </tr>
+         <% end %>
        </tbody>
      </table>
     </div>
