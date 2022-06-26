@@ -2,23 +2,25 @@
 
 <strong>注文情報</strong>
 <table>
-  <thead>
     <tr>
       <th>注文日</th>
-      <th>配送先</th>
-      <th>支払方法</th>
-      <th>ステータス</th>
-    </tr>
-  </thead>
+       <td><%= @order.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+       </tr>
 
-  <tbody>
-    <tr>
-      <td><%= @order.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-      <td><%= @order.address %></td>
-      <td><%= @order.payment_method_i18n %></td>
+       <tr>
+      <th>配送先</th>
+       <td><%= @order.address %></td>
+       </tr>
+
+       <tr>
+      <th>支払方法</th>
+       <td><%= @order.payment_method_i18n %></td>
+       </tr>
+
+       <tr>
+      <th>ステータス</th>
       <td><%= @order.status_i18n %></td>
     </tr>
-  </tbody>
 </table>
 
 <strong>注文内容</strong>
@@ -33,13 +35,13 @@
   </thead>
    <% @total = 0  %>
   <tbody>
-    <% @cart_items.each do |cart_item| %>
+    <% @order_details.each do |order_detail| %>
     <tr>
-      <td><%= cart_item.item.name %></td>
-      <td><%= cart_item.item.with_tax_price %></td>
-      <td><%= cart_item.amount %></td>
-      <td><%= cart_item.subtotal %></td>
-      <% @total += cart_item.subtotal.to_i %>
+      <td><%= order_detail.item.name %></td>
+      <td><%= order_detail.item.with_tax_price %></td>
+      <td><%= order_detail.amount %></td>
+      <td><%= order_detail.subtotal %></td>
+      <% @total += order_detail.subtotal.to_i %>
     </tr>
     <% end %>
   </tbody>
