@@ -1,18 +1,16 @@
 <h3>商品詳細</h3>
 <div class="container">
  <div class="row">
-  <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <%= image_tag @item.get_image(300, 300) %>
-    </div>
-    <div class="col-md-8">
+  <div class="mx-auto col-11">
+    <div class="card mb-3" style="max-width: 400px;">
+      <%= image_tag @item.get_image(400, 400) %>
+     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title"><%= @item.name %></h5>
         <p class="card-text"><%= @item.introduction %></p>
         <p class="card-text"><%= "￥" %><%= @item.price %><%= "（税込）" %></p>
       </div>
+     </div>
     </div>
   </div>
 </div>
@@ -26,5 +24,3 @@
  <% end %>
 </p>
   </div>
-</div>
-</div>
