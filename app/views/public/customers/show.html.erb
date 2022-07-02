@@ -1,12 +1,14 @@
 <div class="container">
    <div class="row">
-     <div class="col-11 mx-auto">
+     <div class="col-12 mx-auto">
       <h3>マイページ</h3>
 
-     <p>
-      <h3>登録情報</h3>
-      <%= link_to "編集する", customers_edit1_path, class:"btn btn-success btn-sm" %>
-     </p>
+     <table>
+      <tr>
+       <th><strong>登録情報</strong></th>
+       <td><%= link_to "編集する", customers_edit1_path, class:"btn btn-success btn-sm" %></td>
+      </tr>
+     </table></br>
 
       <table class="table table-striped">
        <tr>
@@ -39,21 +41,22 @@
         <td><%= current_customer.email %></td>
        </tr>
     </table>
+   </div>
 
     <div class="row">
-     <div class="col-11 mx-auto">
-      <div class="justify-content-center">
-   <span class="font-weight-bold">配送先
-    <%= link_to "一覧を見る", addresses_path, class:"btn btn-primary btn-sm" %>
-   </span></br>
-   </br>
+     <div class="col-12 mx-auto">
+      <table>
+        <tr>
+         <th class="font-weight-bold">配送先</th>
+         <td><%= link_to "一覧を見る", addresses_path, class:"btn btn-primary btn-sm" %></td>
+        </tr>
 
-    <span class="font-weight-bold">注文履歴
-     <%= link_to "一覧を見る", orders_path, class:"btn btn-primary btn-sm" %>
-    </span>
-    </div>
-    </div>
-    </div>
+        <tr>
+         <th class="font-weight-bold">注文履歴</th>
+         <td><%= link_to "一覧を見る", orders_path, class:"btn btn-primary btn-sm" %></td>
+       </tr>
+      </table>
      </div>
-   </div>
+  </div>
  </div>
+</div>

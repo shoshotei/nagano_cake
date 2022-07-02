@@ -1,7 +1,9 @@
-<h3>注文履歴詳細</h3>
+
 
 <div class="container">
    <div class="row">
+    <div class="col-12 mx-auto">
+    <h3>注文履歴詳細</h3>
     <table>
      <tr>
       <th>購入者</th>
@@ -23,7 +25,7 @@
 
      <tr>
       <th>支払方法</th>
-      <td><%= @order.payment_method %></td>
+      <td><%= @order.payment_method_i18n %></td>
      </tr>
 
      <tr>
@@ -37,10 +39,13 @@
       </td>
      </tr>
     </table>
+    </div>
    </div>
+   </br>
 
     <div class="row">
-     <table>
+     <div class="col-8 mx-auto">
+     <table class="table table-hover table-inverse">
        <thead>
         <tr>
           <th>商品名</th>
@@ -58,7 +63,8 @@
           <td><%= order_detail.item.name %></td>
           <td><%= order_detail.price_including_tax %></td>
           <td><%= order_detail.amount %></td>
-          <td><%= @total += order_detail.subtotal.to_i %></td>
+          <td><%= order_detail.subtotal.to_i %></td>
+          <% @total += order_detail.subtotal.to_i %>
           <td>
            <%= order_detail.making_status_i18n %>
             <%= form_with model: order_detail,url: admin_order_detail_path(order_detail.id) do |f| %>
@@ -70,10 +76,12 @@
          </tr>
          <% end %>
        </tbody>
-     </table>
-    </div>
+      </table>
+     </div>
 
-<table>
+
+<div class="col-4 mx-auto">
+<table class="table table-bordered">
     <tr>
       <th>商品合計</th>
       <td><%= @total.to_i %></td>
@@ -88,5 +96,7 @@
       <th>請求金額合計</th>
       <td><%= @order.shipping_cost.to_i + @total.to_i %></td>
     </tr>
-</table>
+   </table>
+  </div>
+ </div>
 </div>
