@@ -7,7 +7,7 @@
         <p>これまでの購入履歴が閲覧できなくなります。</p>
         <p>退会する場合は、「退会する」をクリックしてください。</p>
 
-        <%= link_to "退会しない", customers_path, class: "btn btn-primary btn-sm" %> <%= link_to "退会する", customers_withdrawal_path, method: :patch," data-confilm" => "本当に退会しますか？", class: "btn btn-danger btn-sm" %>
+        <%= link_to "退会しない", customers_path, class: "btn btn-primary btn-sm" %> <%= link_to "退会する", customers_withdrawal_path, method: :patch,data: { confirm: "本当に退会しますか？" }, class: "btn btn-danger btn-sm" %>
      </div>
    </div>
  </div>

@@ -1,5 +1,7 @@
 <h3>注文情報確認</h3>
-
+ <div class="container">
+   <div class="row">
+     <div class="col-8 mx-auto">
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -22,7 +24,9 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
+<div class="col-4 mx-auto">
 <table class="table table-bordered">
     <tr>
       <th>送料</th>
@@ -37,7 +41,10 @@
       <td><%= @order.shipping_cost.to_i + @total.to_i %></td>
     </tr>
 </table>
+</div>
 
+<div class="row">
+  <div class="col-12 mx-auto">
 <strong>支払方法</strong></br>
 <%= @order.payment_method_i18n %></br>
 
@@ -57,3 +64,6 @@
 
 <%= f.submit "注文を確定する", class:"btn btn-success btn-sm" %>
 <% end %>
+     </div>
+   </div>
+ </div>

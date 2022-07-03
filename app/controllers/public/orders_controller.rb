@@ -2,6 +2,11 @@ class Public::OrdersController < ApplicationController
 
   def new
     @order  = Order.new
+    @cart_items = current_customer.cart_items.all
+    if @cart_items.count == 0
+
+      redirect_to cart_items_path
+    end
   end
 
   def confirm

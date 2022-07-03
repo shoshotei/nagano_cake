@@ -5,8 +5,9 @@
 
     <div class="d-flex">
     <% @items.each do |item| %>
-
-    <%= image_tag item.get_image(100, 100) %>
+    <%= link_to item_path(item.id) do %>
+     <%= image_tag item.get_image(100, 100) %>
+    <% end %>
     <div class="card-body">
      <p class="card-text"><%= link_to item.name, item_path(item.id) %></p>
      <p class="card-text"><%= "￥" %><%= item.price %></p>
