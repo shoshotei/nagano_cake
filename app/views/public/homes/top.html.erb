@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-   <div class="mx-auto col-11">
+   <div class="mx-auto col-12">
       <p>ようこそながのCAKEへ！</p>
       <p>このサイトは、ケーキ販売のECサイトになります。</p>
       <p>会員ではない方も商品の閲覧はできますが、</p>
@@ -9,16 +9,18 @@
   </div>
 
       <div class="row">
-      <div class="mx-auto col-11">
-      <h3>新着商品</h3>
-      <div class="d-flex">
+       <h3>新着商品</h3>
+      <div class="mx-auto col-12">
+       <div class="d-flex justify-content-between">
           <% @items.each do |item| %>
-            <div class="justify-content-around">
+            <div class="card" style="width: 150px">
              <%= link_to item_path(item.id) do %>
-               <%= image_tag item.get_image(100, 100) %>
+               <%= image_tag item.get_image(150, 100) %>
              <% end %>
+             <div class="card-body">
               <p class="card-title"><%= link_to item.name, item_path(item.id) %></p>
               <p class="card-text"><%= "￥" %><%= item.price %></p>
+             </div>
              </div>
         <% end %>
         </div>
